@@ -46,7 +46,11 @@ export default function Homescreen({ navigation }) {
               <CardText>Where Are you?</CardText>
               <Segment></Segment>
             </Card>
-            <Card></Card>
+            <Card>
+              <CardText>
+                You will be notified when you've been too long in the sun
+              </CardText>
+            </Card>
           </Content>
         </Container>
       </ScrollView>
