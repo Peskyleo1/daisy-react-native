@@ -13,6 +13,7 @@ import {
 import styled from "styled-components";
 import { Ionicons } from "@expo/vector-icons";
 import Segment from "../components/Segment";
+import TimerButton from "../components/TimerButton";
 
 export default function Homescreen({ navigation }) {
   return (
@@ -46,10 +47,26 @@ export default function Homescreen({ navigation }) {
               <CardText>Where Are you?</CardText>
               <Segment></Segment>
             </Card>
-            <Card>
-              <CardText>
+            <Card
+              style={{
+                flexDirection: "row",
+                justifyContent: "flex-end",
+                alignItems: "center",
+              }}
+            >
+              <CardText style={{ flex: 1 }}>
                 You will be notified when you've been too long in the sun
               </CardText>
+              <TouchableOpacity>
+                <TimerButton></TimerButton>
+                <ButtonLabel
+                  style={{
+                    transform: [{ translateX: -50 }, { translateY: -6 }],
+                  }}
+                >
+                  GO
+                </ButtonLabel>
+              </TouchableOpacity>
             </Card>
           </Content>
         </Container>
@@ -141,9 +158,23 @@ const Card = styled.View`
   margin: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   padding: 30px;
+  /* Testing from here */
 `;
 
 const CardText = styled.Text`
   font-family: "JosefinSans-Medium";
   font-size: 16px;
+`;
+
+const ButtonLabel = styled.Text`
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  font-family: "JosefinSans-Medium";
+  font-size: 16px;
+  color: #fff;
+  width: 100px;
+  height: 12px;
+  text-align: center;
 `;
